@@ -1,6 +1,5 @@
 import React from 'react'
 import {useState} from 'react'
-import {useEffect} from 'react'
 import './textArea.css'
 import './saveReset.css'
 
@@ -16,23 +15,36 @@ const TextArea = () => {
         setMessage("")
     }
 
+    // ---------- handleMessageSave but it creates a .txt file to download ----------
+    // const handleMessageSave = () => {
+    //     const fileData = JSON.stringify(message);
+    //     const blob = new Blob([fileData], { type: "text/plain" });
+    //     const url = URL.createObjectURL(blob);
+    //     const link = document.createElement("a");
+    //     let date = new Date()
+    //     date = date.toDateString()
+    //     link.download = `My note created on ${date} with Chill typer`;
+    //     link.href = url;
+    //     link.click();
+    // }
+    // -----------------------------------------------------------------------------
+
     const handleMessageSave = () => {
-        const fileData = JSON.stringify(message);
-        const blob = new Blob([fileData], { type: "text/plain" });
-        const url = URL.createObjectURL(blob);
-        const link = document.createElement("a");
-        let date = new Date()
-        date = date.toDateString()
-        link.download = `My note created on ${date} with Chill typer`;
-        link.href = url;
-        link.click();
+        let messageStorage = message
+        if (messageStorage === ""){
+            return alert("The message can't be empty.")
+        }
+        let storageCount = Number(localStorage.getItem("counter"))
+        storageCount = storageCount + 1
+        localStorage.setItem("counter", Number(storageCount))
+        localStorage.setItem(storageCount, messageStorage)
     }
 
     return (
         <>
             <textarea className='textArea' placeholder='Type something...' autoFocus value={message} onChange={handleMessageChange}></textarea>
             <div className='saveReset-Container'>
-                <button className='saveReset-Btn' onClick={handleMessageReset}>Reset</button>
+                <button className='saveReset-Btn' onClick={handleMessageReset}>Clear</button>
                 <button className='saveReset-Btn' onClick={handleMessageSave}>Save</button>
             </div>
             <div className='savedContent-Container'>
