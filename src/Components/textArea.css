@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+.textArea {
+    font-family: 'Red Hat Display', sans-serif;
+    height: 92%;
+    width:  92%;
+    /* outline: 1px solid red; */
+    border: 0;
+    font-size: 1.5em;
+    color: rgba(255,255,220,1);
+    background-color: rgba(26,26,26,1);
+    resize: none;
+}
+
+.textArea::placeholder {
+    font-style: italic;
+    font-weight: lighter;
+}
+
+.textArea:focus {
+    border: 0;
+    outline: 0;
+}
+
+
+@media (min-width: 768px) {
+    .textArea {
+        font-size: 2em;
+    }
+}
