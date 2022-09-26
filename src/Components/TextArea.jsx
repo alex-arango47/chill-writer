@@ -2,6 +2,7 @@ import React from 'react'
 import {useState} from 'react'
 import './textArea.css'
 import './saveReset.css'
+import Sidebar from './Sidebar'
 
 const TextArea = () => {
 
@@ -47,9 +48,7 @@ const TextArea = () => {
                 <button className='saveReset-Btn' onClick={handleMessageReset}>Clear</button>
                 <button className='saveReset-Btn' onClick={handleMessageSave}>Save</button>
             </div>
-            <div className='savedContent-Container'>
-                
-            </div>
+            <Sidebar />
         </>
     )
 }
