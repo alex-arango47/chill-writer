@@ -18,6 +18,9 @@ const TextArea = () => {
 
 
     const handleMessageSave = () => {
+        if (message === ""){
+            return alert("The message can't be empty.")
+        }
         const fileData = JSON.stringify(message);
         const blob = new Blob([fileData], { type: "text/plain" });
         const url = URL.createObjectURL(blob);
