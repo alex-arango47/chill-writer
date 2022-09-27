@@ -2,7 +2,7 @@ import React from 'react'
 import {useState} from 'react'
 import './textArea.css'
 import './saveReset.css'
-import Sidebar from './Sidebar'
+// import Sidebar from './Sidebar' -- W.I.P --
 
 const TextArea = () => {
 
@@ -13,33 +13,35 @@ const TextArea = () => {
     }
 
     const handleMessageReset = () => {
-        setMessage("")
+        setMessage('')
     }
 
-    // ---------- handleMessageSave but it creates a .txt file to download ----------
-    // const handleMessageSave = () => {
-    //     const fileData = JSON.stringify(message);
-    //     const blob = new Blob([fileData], { type: "text/plain" });
-    //     const url = URL.createObjectURL(blob);
-    //     const link = document.createElement("a");
-    //     let date = new Date()
-    //     date = date.toDateString()
-    //     link.download = `My note created on ${date} with Chill typer`;
-    //     link.href = url;
-    //     link.click();
-    // }
-    // -----------------------------------------------------------------------------
 
     const handleMessageSave = () => {
-        let messageStorage = message
-        if (messageStorage === ""){
-            return alert("The message can't be empty.")
-        }
-        let storageCount = Number(localStorage.getItem("counter"))
-        storageCount = storageCount + 1
-        localStorage.setItem("counter", Number(storageCount))
-        localStorage.setItem(storageCount, messageStorage)
+        const fileData = JSON.stringify(message);
+        const blob = new Blob([fileData], { type: "text/plain" });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        let date = new Date()
+        date = date.toDateString()
+        link.download = `My note created on ${date} with Chill typer`;
+        link.href = url;
+        link.click();
     }
+
+
+        // ---------- W.I.P ----------
+    // const handleMessageSave = () => {
+    //     let messageStorage = message
+    //     if (messageStorage === ""){
+    //         return alert("The message can't be empty.")
+    //     }
+    //     let storageCount = Number(localStorage.getItem("counter"))
+    //     storageCount = storageCount + 1
+    //     localStorage.setItem("counter", Number(storageCount))
+    //     localStorage.setItem(storageCount, messageStorage)
+    // }
+    // -----------------------------------------------------------------------------
 
     return (
         <>
@@ -48,7 +50,7 @@ const TextArea = () => {
                 <button className='saveReset-Btn' onClick={handleMessageReset}>Clear</button>
                 <button className='saveReset-Btn' onClick={handleMessageSave}>Save</button>
             </div>
-            <Sidebar />
+            {/* <Sidebar /> W.I.P */}
         </>
     )
 }

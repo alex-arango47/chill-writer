@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+.dropMenu-Container {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    right: 1%;
+    background-color: rgba(255,255,220,0.9);
+    color: rgba(26,26,26,1);
+    font-weight: bold;
+    font-family: 'Red Hat Display', sans-serif;
+    filter: drop-shadow(3px 3px 3px rgba(255,255,220,0.3));
+    border-radius: 10px;
+    width: 20%;
+    height: 60%;
+    margin-top: 10px;
+    transition: all 1s ease-in-out;
+    animation: fadeIn 1s;
+}
+
+.dropMenu-Container_FadeOut {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    right: 1%;
+    background-color: rgba(255,255,220,0.9);
+    color: rgba(26,26,26,1);
+    font-weight: bold;
+    font-family: 'Red Hat Display', sans-serif;
+    filter: drop-shadow(3px 3px 3px rgba(255,255,220,0.3));
+    border-radius: 10px;
+    width: 20%;
+    height: 60%;
+    margin-top: 10px;
+    transition: all 1s ease-in-out;
+    animation: fadeOut 1s;
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 100;}
+}
+
+@keyframes fadeOut {
+    0% {opacity: 100;}
+    100% {opacity: 0;}
+}
