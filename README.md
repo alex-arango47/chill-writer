@@ -1,3 +1,3 @@
 # Chill Typer.
 
-A minimal calm note typer where you can put your thoughts into text.
+A simple minimalistic note taking app built with react.
