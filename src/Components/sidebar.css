@@ -48,3 +48,13 @@
 .fa-solid {
     color: rgba(26,26,26,1);
 }
+
+.messageMenu-Container {
+    display: flex;
+    position: fixed;
+    right: 10%;
+}
+
+.hide {
+    display: none;
+}
