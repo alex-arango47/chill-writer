@@ -18,9 +18,10 @@ const Sidebar = () => {
     }
   }
 
+  let messageList = []
+
   const handleMenu = () => {
     let dropMenu = document.querySelector("#messageMenu-Container")
-    let messageList = []
     if(dropMenu.classList.contains("hide")){
       dropMenu.classList.remove("hide")
       dropMenu.classList.add("messageMenu-Container")
@@ -30,9 +31,12 @@ const Sidebar = () => {
     }
     if(localStorage.getItem("messages")){
       messageList.push(JSON.parse(localStorage.getItem("messages")))
-      setMessages(messageList)
+      setMessages(messageList[0].map((msg) => <p className='messageMenu-Text'>{msg}</p>))
+      // return (
+      //   messageList[0].map((msg) => <h1>{msg}</h1>)
+      // )
     } else {
-      messages !== "There are no saved messages." ? setMessages("There are no saved messages.") : setMessages()
+      messages !== <p className='messageMenu-Text'>There are no saved messages.</p> ? setMessages(<p className='messageMenu-Text'>There are no saved messages.</p>) : setMessages()
     }
   }
 
@@ -49,7 +53,7 @@ const Sidebar = () => {
         </button>
       </div>
       <div className='hide' id='messageMenu-Container'>
-        <h1>{messages}</h1>
+        {messages}
       </div>
     </>
   )
