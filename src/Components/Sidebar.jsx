@@ -27,7 +27,11 @@ const Sidebar = () => {
       dropMenu.classList.add("messageMenu-Container")
     } else {
       dropMenu.classList.remove("messageMenu-Container")
-      dropMenu.classList.add("hide")
+      dropMenu.classList.add("messageMenu-ContainerFadeOut")
+      setTimeout(() => {
+        dropMenu.classList.remove("messageMenu-ContainerFadeOut")
+        dropMenu.classList.add("hide")
+      }, 450)
     }
     if(localStorage.getItem("messages")){
       messageList.push(JSON.parse(localStorage.getItem("messages")))
