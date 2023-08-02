@@ -9,5 +9,5 @@ Write your spontaneous thoughts on a calm dark background and then take the idea
 - Stage 2: Saved Messages Module full development, with the ability to edit, delete and upload saved messages. (In Progress)
 - Stage 3: Integration with Google API, Notion API, Slack API & Trello API.
 - Stage 4: Cloud Database & User Structure. Integration with Auth0.
-- Stage 5: Progressive Web App
+- Stage 5: Progressive Web App.
 - Stage 6: Integration with ChatGPT API. Writing Assistant. 
