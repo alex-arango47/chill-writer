@@ -11,3 +11,6 @@ Write your spontaneous thoughts on a calm dark background and then take the idea
 - Stage 4: Cloud Database & User Structure. Integration with Auth0.
 - Stage 5: Progressive Web App.
 - Stage 6: Integration with ChatGPT API. Writing Assistant. 
+
+
+### [Trello Board](https://trello.com/b/a2XuOcMM/chill-writer)
